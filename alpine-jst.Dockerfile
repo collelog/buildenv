@@ -16,5 +16,9 @@ RUN set -eux && \
 		unzip \
 		yasm && \
 	\
+	# JST
+	cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
+	echo "Asia/Tokyo" > /etc/timezone && \
+	\
 	# cleaning
 	rm -rf /tmp/* /var/cache/apk/*

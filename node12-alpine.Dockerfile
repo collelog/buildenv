@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM node:12-alpine
 
 RUN set -eux && \
 	apk upgrade --update && \
