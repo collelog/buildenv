@@ -52,7 +52,7 @@ jobs:
         run: |
           docker run --rm mplatform/mquery collelog/buildenv:node12-alpine
       -
-        name: Docker Buildx (build) : JST Version
+        name: Docker Buildx (build) - JST Version
         run: |
           docker buildx build \
             --cache-from "type=local,src=/tmp/.buildx-cache" \
@@ -62,7 +62,7 @@ jobs:
             --tag collelog/buildenv:node12-alpine-jst \
             --file ./node12-alpine-jst.Dockerfile ./
       -
-        name: Docker Buildx (push) : JST Version
+        name: Docker Buildx (push) - JST Version
         run: |
           docker buildx build \
             --cache-from "type=local,src=/tmp/.buildx-cache" \
@@ -71,7 +71,7 @@ jobs:
             --tag collelog/buildenv:node12-alpine-jst \
             --file ./node12-alpine-jst.Dockerfile ./
       -
-        name: Docker Check Manifest : JST Version
+        name: Docker Check Manifest - JST Version
         run: |
           docker run --rm mplatform/mquery collelog/buildenv:node12-alpine-jst
       -
