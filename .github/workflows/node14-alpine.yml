@@ -29,7 +29,7 @@ jobs:
         run: |
           echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
       -
-        name: Docker Buildx (build)
+        name: Docker Buildx (build) - node14-alpine
         run: |
           docker buildx build \
             --cache-from "type=local,src=/tmp/.buildx-cache" \
@@ -39,7 +39,7 @@ jobs:
             --tag collelog/buildenv:node14-alpine \
             --file ./node14-alpine.Dockerfile ./
       -
-        name: Docker Buildx (push)
+        name: Docker Buildx (push) - node14-alpine
         run: |
           docker buildx build \
             --cache-from "type=local,src=/tmp/.buildx-cache" \
@@ -48,11 +48,11 @@ jobs:
             --tag collelog/buildenv:node14-alpine \
             --file ./node14-alpine.Dockerfile ./
       -
-        name: Docker Check Manifest
+        name: Docker Check Manifest - node14-alpine
         run: |
           docker run --rm mplatform/mquery collelog/buildenv:node14-alpine
       -
-        name: Docker Buildx (build) - JST Version
+        name: Docker Buildx (build) - node14-alpine-jst
         run: |
           docker buildx build \
             --cache-from "type=local,src=/tmp/.buildx-cache" \
@@ -62,7 +62,7 @@ jobs:
             --tag collelog/buildenv:node14-alpine-jst \
             --file ./node14-alpine-jst.Dockerfile ./
       -
-        name: Docker Buildx (push) - JST Version
+        name: Docker Buildx (push) - node14-alpine-jst
         run: |
           docker buildx build \
             --cache-from "type=local,src=/tmp/.buildx-cache" \
@@ -71,7 +71,7 @@ jobs:
             --tag collelog/buildenv:node14-alpine-jst \
             --file ./node14-alpine-jst.Dockerfile ./
       -
-        name: Docker Check Manifest - JST Version
+        name: Docker Check Manifest - node14-alpine-jst
         run: |
           docker run --rm mplatform/mquery collelog/buildenv:node14-alpine-jst
       -
