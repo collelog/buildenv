@@ -18,3 +18,5 @@ RUN set -eux && \
 	\
 	# cleaning
 	rm -rf /tmp/* /var/cache/apk/*
+
+WORKDIR /build
