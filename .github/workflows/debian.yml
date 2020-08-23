@@ -52,29 +52,6 @@ jobs:
         run: |
           docker run --rm mplatform/mquery collelog/buildenv:debian
       -
-        name: Docker Buildx (build) - debian-jst
-        run: |
-          docker buildx build \
-            --cache-from "type=local,src=/tmp/.buildx-cache" \
-            --cache-to "type=local,dest=/tmp/.buildx-cache" \
-            --platform linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64 \
-            --output "type=image,push=false" \
-            --tag collelog/buildenv:debian-jst \
-            --file ./debian-jst.Dockerfile ./
-      -
-        name: Docker Buildx (push) - debian-jst
-        run: |
-          docker buildx build \
-            --cache-from "type=local,src=/tmp/.buildx-cache" \
-            --platform linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64 \
-            --output "type=image,push=true" \
-            --tag collelog/buildenv:debian-jst \
-            --file ./debian-jst.Dockerfile ./
-      -
-        name: Docker Check Manifest - debian-jst
-        run: |
-          docker run --rm mplatform/mquery collelog/buildenv:debian-jst
-      -
         name: Clear
         if: always()
         run: |
