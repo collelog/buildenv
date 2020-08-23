@@ -10,6 +10,7 @@ RUN set -eux && \
 		build-essential \
 		cmake \
 		coreutils \
+		curl \
 		libcunit1-dev \
 		libtool \
 		nasm \
