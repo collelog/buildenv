@@ -6,6 +6,7 @@ RUN set -eux && \
 		autoconf \
 		automake \
 		alpine-sdk \
+		ca-certificates \
 		cmake \
 		coreutils \
 		cunit-dev \

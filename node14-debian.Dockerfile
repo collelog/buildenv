@@ -8,6 +8,7 @@ RUN set -eux && \
 		autoconf \
 		automake \
 		build-essential \
+		ca-certificates \
 		cmake \
 		coreutils \
 		curl \
