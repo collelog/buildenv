@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM node:14-buster-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 
