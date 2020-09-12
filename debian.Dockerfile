@@ -14,6 +14,7 @@ RUN set -eux && \
 		curl \
 		libcunit1-dev \
 		libtool \
+		linux-kernel-headers \
 		nasm \
 		python3 \
 		tzdata \

@@ -11,6 +11,7 @@ RUN set -eux && \
 		coreutils \
 		cunit-dev \
 		libtool \
+		linux-headers \
 		nasm \
 		python3 \
 		tzdata \
