@@ -12,6 +12,7 @@ RUN set -eux && \
 		cmake \
 		coreutils \
 		curl \
+		dos2unix \
 		libcunit1-dev \
 		libtool \
 		linux-kernel-headers \

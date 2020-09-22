@@ -10,6 +10,7 @@ RUN set -eux && \
 		cmake \
 		coreutils \
 		cunit-dev \
+		dos2unix \
 		libtool \
 		linux-headers \
 		nasm \
