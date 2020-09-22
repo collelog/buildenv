@@ -17,6 +17,7 @@ RUN set -eux && \
 		python3 \
 		tzdata \
 		unzip \
+		wget \
 		yasm && \
 	\
 	# cleaning
