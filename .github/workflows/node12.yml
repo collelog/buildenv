@@ -45,7 +45,7 @@ jobs:
       -
         name: Build and push - node12-debian
         uses: docker/build-push-action@v2
-        with:v
+        with:
           context: ./
           file: ./golang-alpine.Dockerfile
           tags: |
