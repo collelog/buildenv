@@ -34,7 +34,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:v
           context: ./
-          file: ./golang-alpine.Dockerfile
+          file: ./node14-alpine.Dockerfile
           tags: |
             collelog/buildenv:node14-alpine
             collelog/buildenv:node14-alpine3.12
@@ -47,7 +47,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./
-          file: ./golang-alpine.Dockerfile
+          file: ./node14-debian-buster.Dockerfile
           tags: |
             collelog/buildenv:node14-debian
             collelog/buildenv:node14-debian-buster
