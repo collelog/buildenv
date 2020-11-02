@@ -1,8 +1,8 @@
-FROM golang:alpine
+FROM golang:alpine3.12
 
 RUN set -eux && \
 	apk upgrade --update && \
-	apk add --no-cache --update \
+	apk add --no-cache --update-cache \
 		autoconf \
 		automake \
 		alpine-sdk \

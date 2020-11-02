@@ -1,8 +1,8 @@
-FROM node:14-alpine
+FROM node:14-alpine3.12
 
 RUN set -eux && \
 	apk upgrade --update && \
-	apk add --no-cache --update \
+	apk add --no-cache --update-cache \
 		autoconf \
 		automake \
 		alpine-sdk \
