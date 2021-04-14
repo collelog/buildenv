@@ -1,4 +1,4 @@
-FROM node:12-alpine3.12
+FROM node:12-alpine3.13
 
 RUN set -eux && \
 	apk upgrade --update && \
