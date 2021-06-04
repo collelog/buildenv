@@ -1,4 +1,4 @@
-FROM ruby:2.7.1-slim-buster
+FROM ruby:2.7.3-slim-buster
 
 ENV DEBIAN_FRONTEND=noninteractive
 
