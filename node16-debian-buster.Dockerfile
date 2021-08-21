@@ -25,6 +25,6 @@ RUN set -eux && \
 	\
 	# cleaning
 	apt-get clean && \
-	rm -rf /tmp/* /var/lib/apt/lists/*
+	rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/*
 
 WORKDIR /build

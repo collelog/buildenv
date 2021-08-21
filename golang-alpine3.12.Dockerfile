@@ -22,6 +22,6 @@ RUN set -eux && \
 		yasm && \
 	\
 	# cleaning
-	rm -rf /tmp/* /var/cache/apk/*
+	rm -rf /tmp/* /var/tmp/*
 
 WORKDIR /build
