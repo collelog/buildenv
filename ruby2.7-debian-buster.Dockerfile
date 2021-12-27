@@ -4,6 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN set -eux && \
 	apt-get update -qq && \
+	apt-get upgrade -y && \
 	apt-get install -y --no-install-recommends \
 		autoconf \
 		automake \
