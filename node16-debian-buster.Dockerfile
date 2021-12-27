@@ -18,6 +18,7 @@ RUN set -eux && \
 		libtool \
 		linux-kernel-headers \
 		nasm \
+		openssl \
 		python3 \
 		tzdata \
 		unzip \
