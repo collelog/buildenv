@@ -25,7 +25,7 @@ RUN set -eux && \
 		wget \
 		yasm && \
 	\
-	update-ca-certificates --fresh \
+	update-ca-certificates --fresh && \
 	\
 	# cleaning
 	apt-get clean && \
