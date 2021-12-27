@@ -30,6 +30,18 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       -
+        name: Build and push - alpine3.15
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./alpine3.15.Dockerfile
+          tags: |
+            collelog/buildenv:alpine3.15
+          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
+          push: true
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache
+      -
         name: Build and push - alpine3.14
         uses: docker/build-push-action@v2
         with:
@@ -50,30 +62,6 @@ jobs:
           file: ./alpine3.13.Dockerfile
           tags: |
             collelog/buildenv:alpine3.13
-          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
-          push: true
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache
-      -
-        name: Build and push - alpine3.14
-        uses: docker/build-push-action@v2
-        with:
-          context: ./
-          file: ./alpine3.14.Dockerfile
-          tags: |
-            collelog/buildenv:alpine3.14
-          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
-          push: true
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache
-      -
-        name: Build and push - alpine3.15
-        uses: docker/build-push-action@v2
-        with:
-          context: ./
-          file: ./alpine3.15.Dockerfile
-          tags: |
-            collelog/buildenv:alpine3.15
           platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
           push: true
           cache-from: type=local,src=/tmp/.buildx-cache
