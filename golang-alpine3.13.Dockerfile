@@ -1,4 +1,4 @@
-FROM node:15-alpine
+FROM golang:alpine3.13
 
 RUN set -eux && \
 	apk upgrade --update && \

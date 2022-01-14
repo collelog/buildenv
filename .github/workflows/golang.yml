@@ -30,13 +30,48 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       -
-        name: Build and push - alpine3.13
+        name: Build and push - alpine-latest
         uses: docker/build-push-action@v2
         with:
           context: ./
           file: ./golang-alpine.Dockerfile
           tags: |
             collelog/buildenv:golang-alpine
+          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
+          push: true
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache
+      -
+        name: Build and push - alpine3.15
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./golang-alpine3.15.Dockerfile
+          tags: |
+            collelog/buildenv:golang-alpine3.15
+          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
+          push: true
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache
+      -
+        name: Build and push - alpine3.14
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./golang-alpine3.14.Dockerfile
+          tags: |
+            collelog/buildenv:golang-alpine3.14
+          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
+          push: true
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache
+      -
+        name: Build and push - alpine3.13
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./golang-alpine.Dockerfile
+          tags: |
             collelog/buildenv:golang-alpine3.13
           platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
           push: true

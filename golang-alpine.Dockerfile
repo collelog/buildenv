@@ -1,4 +1,4 @@
-FROM golang:alpine3.13
+FROM golang:alpine
 
 RUN set -eux && \
 	apk upgrade --update && \
