@@ -1,4 +1,4 @@
-name: node16
+name: node18
 
 on: [ workflow_dispatch ]
 
