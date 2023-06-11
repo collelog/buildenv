@@ -16,7 +16,7 @@ RUN set -eux && \
 		dos2unix \
 		libcunit1-dev \
 		libtool \
-		linux-kernel-headers \
+		linux-headers-$(dpkg --print-architecture) \
 		nasm \
 		openssl \
 		python3 \
