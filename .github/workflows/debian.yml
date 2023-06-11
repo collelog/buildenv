@@ -30,7 +30,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       -
-        name: Build and push - debian
+        name: Build and push - debian-buster
         uses: docker/build-push-action@v2
         with:
           context: ./
@@ -38,6 +38,18 @@ jobs:
           tags: |
             collelog/buildenv:debian
             collelog/buildenv:debian-buster
+          platforms: linux/amd64,linux/arm/v7,linux/arm64
+          push: true
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache
+      -
+        name: Build and push - debian-bullseye
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./debian-bullseye.Dockerfile
+          tags: |
+            collelog/buildenv:debian-bullseye
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: true
           cache-from: type=local,src=/tmp/.buildx-cache
