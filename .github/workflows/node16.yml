@@ -96,13 +96,12 @@ jobs:
           context: ./
           file: ./node16-debian-buster.Dockerfile
           tags: |
-            collelog/buildenv:node16-debian
             collelog/buildenv:node16-debian-buster
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: true
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
-      -
+    -
         name: Build and push - node16-debian-bullseye
         uses: docker/build-push-action@v2
         with:
@@ -114,3 +113,17 @@ jobs:
           push: true
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
+      -
+        name: Build and push - node16-debian-bookworm
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./node16-debian-bookworm.Dockerfile
+          tags: |
+            collelog/buildenv:node16-debian
+            collelog/buildenv:node16-debian-bookworm
+          platforms: linux/amd64,linux/arm/v7,linux/arm64
+          push: true
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache
+  
