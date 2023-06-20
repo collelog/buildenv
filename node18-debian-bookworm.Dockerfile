@@ -17,7 +17,7 @@ RUN set -eux && \
 		dos2unix \
 		libcunit1-dev \
 		libtool \
-		linux-headers-5.10.0-22 \
+		linux-headers-6.1.0-9 \
 		nasm \
 		openssl \
 		python3 \
