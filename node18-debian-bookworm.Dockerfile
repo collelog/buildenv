@@ -1,4 +1,5 @@
-FROM node:18-bookworm-slim
+FROM node:18-bookworm
+#FROM node:18-bookworm-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 
